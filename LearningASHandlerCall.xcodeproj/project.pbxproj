@@ -10,6 +10,8 @@
 		EC770560190698C300D2A8C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC77055F190698C300D2A8C8 /* Foundation.framework */; };
 		EC770563190698C300D2A8C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC770562190698C300D2A8C8 /* main.m */; };
 		EC770567190698C300D2A8C8 /* LearningASHandlerCall.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC770566190698C300D2A8C8 /* LearningASHandlerCall.1 */; };
+		EC77056F19069AD700D2A8C8 /* TCallScript.m in Sources */ = {isa = PBXBuildFile; fileRef = EC77056E19069AD700D2A8C8 /* TCallScript.m */; };
+		EC77057419069BBB00D2A8C8 /* AttachedScripts.applescript in Sources */ = {isa = PBXBuildFile; fileRef = EC77057219069BBA00D2A8C8 /* AttachedScripts.applescript */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		EC770562190698C300D2A8C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC770565190698C300D2A8C8 /* LearningASHandlerCall-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningASHandlerCall-Prefix.pch"; sourceTree = "<group>"; };
 		EC770566190698C300D2A8C8 /* LearningASHandlerCall.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LearningASHandlerCall.1; sourceTree = "<group>"; };
+		EC77056D19069AD700D2A8C8 /* TCallScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCallScript.h; sourceTree = "<group>"; };
+		EC77056E19069AD700D2A8C8 /* TCallScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCallScript.m; sourceTree = "<group>"; };
+		EC77057219069BBA00D2A8C8 /* AttachedScripts.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = AttachedScripts.applescript; sourceTree = "<group>"; };
+		EC77057319069BBA00D2A8C8 /* AttachedScripts.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = AttachedScripts.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				EC770561190698C300D2A8C8 /* LearningASHandlerCall */,
+				EC77057119069B4B00D2A8C8 /* Scripts */,
 				EC77055E190698C300D2A8C8 /* Frameworks */,
 				EC77055D190698C300D2A8C8 /* Products */,
 			);
@@ -76,6 +83,7 @@
 				EC770562190698C300D2A8C8 /* main.m */,
 				EC770566190698C300D2A8C8 /* LearningASHandlerCall.1 */,
 				EC770564190698C300D2A8C8 /* Supporting Files */,
+				EC77057019069B2100D2A8C8 /* General Class */,
 			);
 			path = LearningASHandlerCall;
 			sourceTree = "<group>";
@@ -86,6 +94,25 @@
 				EC770565190698C300D2A8C8 /* LearningASHandlerCall-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC77057019069B2100D2A8C8 /* General Class */ = {
+			isa = PBXGroup;
+			children = (
+				EC77056D19069AD700D2A8C8 /* TCallScript.h */,
+				EC77056E19069AD700D2A8C8 /* TCallScript.m */,
+			);
+			name = "General Class";
+			sourceTree = "<group>";
+		};
+		EC77057119069B4B00D2A8C8 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				EC77057219069BBA00D2A8C8 /* AttachedScripts.applescript */,
+				EC77057319069BBA00D2A8C8 /* AttachedScripts.scpt */,
+			);
+			name = Scripts;
+			path = LearningASHandlerCall;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC770563190698C300D2A8C8 /* main.m in Sources */,
+				EC77057419069BBB00D2A8C8 /* AttachedScripts.applescript in Sources */,
+				EC77056F19069AD700D2A8C8 /* TCallScript.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
