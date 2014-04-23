@@ -172,7 +172,7 @@ statusstr, and volume .  *)
 on ReportRemotePlayerState()
 	set theResult to {0, "", "", 0, 0, "Not Playing", 0}
 	using terms from application "iTunes"
-		tell application "iTunes" of machine theRemoteURL
+		tell application "iTunes" -- of machine theRemoteURL
 			if player state is playing then
 				-- set up the status string
 				set statusStr to "Playing '" & name of current track & "' by '"
@@ -283,19 +283,19 @@ name in the list of displayed playlists.  Here we return a list containing
 all of the names of the tracks in the selected playlist. *)
 on GetPlaylistTracks(playlistName)
 	set theTracks to {}
-    try
-	using terms from application "iTunes"
-		tell application "iTunes" of machine theRemoteURL
-			tell source "Library"
-				tell playlist playlistName
-					set theTracks to get name of every track
+	try
+		using terms from application "iTunes"
+			tell application "iTunes" of machine theRemoteURL
+				tell source "Library"
+					tell playlist playlistName
+						set theTracks to get name of every track
+					end tell
 				end tell
 			end tell
-		end tell
-	end using terms from
-    on error
-        return theTracks
-    end try
+		end using terms from
+	on error
+		return theTracks
+	end try
 	return theTracks
 end GetPlaylistTracks
 

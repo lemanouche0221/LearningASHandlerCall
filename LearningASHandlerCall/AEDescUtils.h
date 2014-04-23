@@ -1,6 +1,6 @@
 /*
-     File: TCallScript.h
- Abstract: A class for calling through from Objective-C to AppleScript handlers.
+     File: AEDescUtils.h
+ Abstract: A category of NSAppleEventDescriptor used in this application.
   Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -50,43 +50,81 @@
 
 
 
-	/* TCallScript - A class for calling through from 
-	Objective-C to AppleScript handlers. */
-	
-@interface TCallScript : NSObject {
-	NSAppleScript* theScript; /* the compiled AppleScript */
-}
+	/* AEDescUtils category on NSAppleEventDescriptor provides
+	two convenience methods.  Both methods convert an AEDescList
+	containing string values into an NSArray* of NSString* values.  */
+@interface NSAppleEventDescriptor (AEDescUtils)
 
-	/* initialized a TCallScript loading a pre-compiled script
-	containing the handlers we wish to call */
-- (id) initWithURLToCompiledScript:(NSURL*)scriptURL;
+	/* Convert an AEDescList of strings to NSArray of strings sorted in alphabetical order. */
+- (NSArray*) listOfStringsToSortedArray; 
 
-	/* for freeing up our storage */
-- (void) dealloc;
-
-
-	/* property for the 'theScript' field */
-@property (retain) NSAppleScript *theScript;
-
-
-	/* this is the method we use for calling through to the
-	handlers in the script.  we provide the name of the handler
-	to call and a list of parameters to pass to the handler.  The
-	result will be whatever the script's handler returned.  We return
-	nil if an error occurs. */
-- (NSAppleEventDescriptor*) callScript:(NSString *)handlerName 
-		withArrayOfParameters:(NSAppleEventDescriptor*) parameterList;
-
-
-	/* callHandler is a convenience routine that calls through to
-	callScript:withArrayOfParameters:.  This method received parameters
-	as a variable argument list of Objective-C objects and it automatically
-	builds the AEDescList parameter for callScript:withArrayOfParameters: based
-	on the types of objects provided as parameters.  Parameters may be NSNumbers,
-	NSStrings, or NSAppleEventDescriptors.  */
-- (NSAppleEventDescriptor*) callHandler:(NSString *)handlerName withParameters: (id) firstParameter, ... ;
+	/* Convert an AEDescList of strings to NSArray of strings preserving their ordering. */
+- (NSArray*) listOfStringsToArray;
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
